@@ -1,44 +1,83 @@
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 80%;
+    background-color: black;
 }
+
+li + li::before {
+    content: " | ";
+    color: white;
+}
+
 nav ul, footer ul {
-    font-family:'Courier', 'Lucida Console', 'Monaco';
+    font-family: 'Lucida Console', 'Monaco';
     padding: 0px;
     list-style: none;
     font-weight: bold;
 }
+
 nav ul li, footer ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 0px;
 }
+
 a {
     text-decoration: none;
-    color: #999;
+    color: forestgreen;
 }
+
 a:hover {
     text-decoration: underline;
+    color: rgba(0,255,0,1);
 }
+
 h1 {
-    font-size: 3em;
-    font-family:'Courier', 'Lucida Console', 'Monaco';
+    font-size: 2em;
+    font-family: monospace;
+    color: whitesmoke;
 }
 p {
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-family:'Courier', 'Lucida Console', 'Monaco';
     line-height: 1.4em;
-    color: #333;
+    color: #AAAABB;
 }
+
+nav {
+  border-bottom: 1px solid #d5d5d5;
+}
+
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 154px);
+  grid-auto-flow: row;
+  /* This is better for small screens, once min() is better supported */
+  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+  grid-gap: 15px;
+  /* This is the standardized property now, but has slightly less support */
+  /* gap: 1rem */
+  color: white;
 }
 
-ul.posts li {
-    list-style: none;
+.griditem {
+  text-align: center;
+  font-size: 0.85em;
+  font-weight: bold;
+}
+
+.griditemimage {
+  border: 2px solid rgba(255,255,255,.15);
+}
+
+.griditem:hover .griditemtext {
+  color: rgba(0,255,0,1);
+}
+
+.griditem:hover .griditemimage {
+  border: 2px solid rgba(0,255,0,1);
 }
