@@ -1,57 +1,107 @@
+<template id ="my-griditemtemplate">
+	<style>
+	a {
+	    text-decoration: none;
+	    color: forestgreen;
+	}
+	#griditem {
+	  font-weight: bold;
+	  display: flex;
+	  flex-direction: column;
+	}
+	#griditemimage {
+	  border: 2px solid rgba(255,255,255,.15);
+	}
+
+	#griditemtextcontainer {
+	  text-align: center;
+	  display: flex;
+	  flex-direction: column;
+	  height: 2em;
+	}
+
+	#griditemtext {
+	  align-self: center;
+	  font-size: 0.85em;
+	}
+
+	#griditem:hover #griditemtext {
+	  color: rgba(0,255,0,1);
+	}
+
+	#griditem:hover #griditemimage {
+	  border: 2px solid rgba(0,255,0,1);
+	}
+	</style>
+
+	<div id="griditem">
+		<div id="griditemtextcontainer">
+			<div id="griditemtext">
+				<slot name ="griditemtextslot">
+					Grid Item Text
+				</slot>
+			</div>
+		</div>
+		<div id="griditemimage">
+			<slot name ="griditemimageslot">
+				<img src="images/part1.png" style="display:block">
+			</slot>
+		</div>
+	</div>
+</template>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>TinyRogue</title>
+		<title>tinyrogue</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="./css/main.css">
-
 		</style>
 	</head>
+	<script src="scripts/main.js"></script>
 	<body>
 		<nav>
   		<ul>
-      		<li><a href="/tinyrogueweb">HOME</a></li>
+      		<li><a href="/tinyrogueweb">home</a></li>
   		</ul>
 		</nav>
 		<div class="container">
     		<div class="blurb">
         		<h1>tinyrogue</h1>
-						<p>A roguelike built from the
+						<p>a roguelike built from the
 							<a href="https://bfnightly.bracketproductions.com/rustbook/">
-								Rust Roguelike Tutorial
+								rust roguelike tutorial
 							</a> using
 							<a href="https://forum.unity.com/forums/project-tiny.151/">
-								Unity's Project Tiny
+								unity's project tiny
 							</a>
 						</p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
 
-		<div class="grid">
+		<div id="grid">
+			<a href="./game/01/index.html">
+				<my-griditemtemplate>
+					<span slot="griditemtextslot">
+						01-walking around
+					</span>
+					<span slot="griditemimageslot">
+						<img src="images/01.png" style="display:block">
+					</span>
+				</my-griditemtemplate>
+			</a>
 
-						<div class = "griditem">
-								<a href="./game/part1/part1.html">
-								<div class="griditemtext">
-										Part 1 - Walking A Map
-								</div>
-								<div class="griditemimage">
-										<img src="images/part1.png" style="display:block">
-								</div>
-							</a>
-						</div>
-
-
-						<div class = "griditem">
-								<a href="./game/part2/part2.html">
-								<div class="griditemtext">
-										Part 2 - Better Map
-								</div>
-								<div class="griditemimage">
-										<img src="images/part2.png" style="display:block">
-								</div>
-							</a>
-						</div>
-
+			<a href="./game/02/index.html">
+				<my-griditemtemplate>
+					<span slot="griditemtextslot">
+						02-rooms and halls
+					</span>
+					<span slot="griditemimageslot">
+						<img src="images/02.png" style="display:block">
+					</span>
+				</my-griditemtemplate>
+			</a>
 		</div>
 
 		<br>

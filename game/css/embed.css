@@ -22,7 +22,7 @@ button {
 
 button:hover {
   color: rgba(0,255,0,1);
-  border-color: green;
+  border-color: rgba(0,255,0,1);
 }
 
 

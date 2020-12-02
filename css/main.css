@@ -52,7 +52,7 @@ footer {
     font-size: .8em;
 }
 
-.grid {
+#grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 154px);
   grid-auto-flow: row;
@@ -64,20 +64,32 @@ footer {
   color: white;
 }
 
-.griditem {
-  text-align: center;
-  font-size: 0.85em;
+#griditem {
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
-.griditemimage {
+#griditemimage {
   border: 2px solid rgba(255,255,255,.15);
 }
 
-.griditem:hover .griditemtext {
+#griditemtextcontainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 2em;
+}
+
+#griditemtext {
+  align-self: center;
+  font-size: 0.85em;
+}
+
+#griditem:hover #griditemtext {
   color: rgba(0,255,0,1);
 }
 
-.griditem:hover .griditemimage {
+#griditem:hover #griditemimage {
   border: 2px solid rgba(0,255,0,1);
 }
