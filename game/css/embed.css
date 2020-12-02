@@ -1,0 +1,31 @@
+
+
+
+iframe {
+  display: block;
+  border-style: none;
+  margin: 0 auto;
+}
+
+.iframe-container {
+  display: grid;
+  color:white;
+  text-align: center;
+  font-family: 'Lucida Console', 'Monaco';
+}
+
+button {
+  color: forestgreen;
+  background: none;
+  border-color: rgba(255,255,255,.15);;
+}
+
+button:hover {
+  color: rgba(0,255,0,1);
+  border-color: green;
+}
+
+
+.iframe-header {
+  font-size: 0.85em;
+}
