@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>03-field of view</title>
+		<!-- link to main stylesheet -->
+		<link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/embed.css">
+
+		</style>
+	</head>
+	<body>
+    <nav>
+  		<ul>
+      		<li><a href="../../index.html">home</a></li>
+  		</ul>
+		</nav>
+
+		<br>
+
+    <div class = "iframe-container">
+			<div class="iframe-header">
+				03-field of view
+		  </div>
+      <iframe id="frame" src="TinyRogue.html" width="480" height="264">
+      </iframe>
+      <div class = "iframe-text">
+        <button onclick="requestFullScreen('body')">fullscreen</button>
+      </div>
+    </div>
+
+		<div id="state-msg">
+
+		<div>
+
+    <script>
+      function requestFullScreen()
+      {
+				element = document.getElementById("frame");
+        // Supports most browsers and their versions.
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+        if (requestMethod) { // Native full screen.
+            requestMethod.call(element)
+        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+      }
+
+			document.onkeydown = function(e)
+			{
+			  if (e.key == "Escape") {
+					document.exitFullscreen();
+			  }
+			};
+    </script>
+
+		<br>
+
+		<footer>
+    		<ul>
+        		<li><a href="mailto:sarkahn@gmail.com">email</a></li>
+        		<li><a href="https://github.com/sarkahn">github.com/sarkahn</a></li>
+			</ul>
+		</footer>
+	</body>
+</html>
